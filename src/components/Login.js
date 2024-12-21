@@ -7,16 +7,15 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import { BACKGROUND, PROFILE_PIC } from "../utils/constant";
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
 
-  const dispatch = useDispatch()
-  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const name = useRef("");
   const email = useRef("");
@@ -49,21 +48,20 @@ const Login = () => {
           const user = userCredential.user;
           updateProfile(user, {
             displayName: name.current.value,
-            photoURL:"https://wallpapers.com/images/high/netflix-profile-pictures-1000-x-1000-qo9h82134t9nv0j0.webp"
+            photoURL: PROFILE_PIC ,
           })
             .then(() => {
               // Profile updated!
               //below done because when dispatch the action get the updated data from the body.js
-               const { uid, email, displayName, photoURL } = auth.currentUser;
-                      dispatch(
-                        addUser({
-                          uid: uid,
-                          email: email,
-                          displayName: displayName,
-                          photoURL: photoURL,
-                        })
-                      );
-              navigate("/browse");
+              const { uid, email, displayName, photoURL } = auth.currentUser;
+              dispatch(
+                addUser({
+                  uid: uid,
+                  email: email,
+                  displayName: displayName,
+                  photoURL: photoURL,
+                })
+              );
             })
             .catch((error) => {
               // An error occurred
@@ -90,7 +88,6 @@ const Login = () => {
           // Signed in
           const user = userCredential.user;
           console.log(user);
-          navigate("/browse"); //when use login or signup successfully then navigate to browse
           // ...
         })
         .catch((error) => {
@@ -107,7 +104,7 @@ const Login = () => {
       {/* Background image with overlay */}
       <div className="absolute inset-0">
         <img
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/150c4b42-11f6-4576-a00f-c631308b1e43/web/IN-en-20241216-TRIFECTA-perspective_915a9055-68ad-4e81-b19a-442f1cd134dc_medium.jpg"
+          src={BACKGROUND}
           alt="Background-Image"
           // className="w-full h-full object-cover"
         />

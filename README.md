@@ -24,6 +24,14 @@
         - Search bar
         - movie suggestions
 
+for Browse page design
+    - main video container
+        - video bg
+        - video title
+    
+    - secondory container
+        - movies list n*
+        - cards n*
 
 # setup firebase with authentication and deployment of proj
 
@@ -62,5 +70,14 @@ use for get the reference from element or input using that value check that whea
           className="text-white w-full box-border my-2 p-4 bg-transparent border border-gray-600 rounded-md"
     />
 
+# router
 
+routing done only from child of routing parent means body is parent and Login, Browse is child so you can do navigate inside only children no in parent
 
+check header for navigate, when user is signin so he can't go back to signin page or when he is not signup or signin he can't go onto the browse page.
+
+# TMDB
+
+    - Register or login for tmdb api 
+    - create an app and then you will get the access token
+    - get data from TMDB now playing movies list API
