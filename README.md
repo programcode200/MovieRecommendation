@@ -24,14 +24,26 @@
         - Search bar
         - movie suggestions
 
+
 for Browse page design
     - main video container
         - video bg
         - video title
     
     - secondory container
-        - movies list n*
         - cards n*
+    - movielist component
+        - popular
+            - movies list n*
+        - Now playing
+            - movies list n*
+
+Gpt search feature
+    
+
+
+       
+    
 
 # setup firebase with authentication and deployment of proj
 

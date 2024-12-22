@@ -51,18 +51,21 @@ const Header = () => {
       <img className="w-44 contrast-125 " src={LOGO} alt="Logo" />
 
       {user && (
-        <div>
-          <img
-            className="w-10 mx-auto rounded-sm"
-            src={user?.photoURL || PROFILE_PIC}
-            alt="Icon"
-          />
-          <button
-            onClick={handleSignOut}
-            className="text-red-500 font-semibold"
-          >
-            Sign Out
-          </button>
+        <div className="flex">
+          <button className="text-white font-semibold hover:bg-red-700 my-auto m-10 bg-red-600 py-2 rounded-md px-4"> GPT Search</button>
+          <div>
+            <img
+              className="w-10 mx-auto rounded-sm"
+              src={user?.photoURL || PROFILE_PIC}
+              alt="Icon"
+            />
+            <button
+              onClick={handleSignOut}
+              className="text-white font-semibold"
+            >
+              Sign Out
+            </button>
+          </div>
         </div>
       )}
     </div>

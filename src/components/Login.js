@@ -106,10 +106,10 @@ const Login = () => {
         <img
           src={BACKGROUND}
           alt="Background-Image"
-          // className="w-full h-full object-cover"
+          className="w-full h-full object-cover"
         />
         {/* Dark overlay on the background image */}
-        {/* <div className="absolute inset-0 bg-black opacity-50"></div> */}
+        <div className="absolute inset-0 bg-black opacity-50"></div>
       </div>
 
       <form

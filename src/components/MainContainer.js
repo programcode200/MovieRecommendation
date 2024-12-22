@@ -7,16 +7,17 @@ const MainContainer = () => {
   const movies = useSelector((store) => store.movies?.nowPlayingMovies);
 
   if (movies === null) return; //it call early return, means nowPlayingMovies contain null or empty then return and don't go forward.
+  console.log("maincontainer", movies);
 
-  const mainMovie = movies[0];
+  const mainMovie = movies[2];
   console.log(mainMovie);
 
   const { id, overview, original_title } = mainMovie;
 
   return (
     <div>
-      <VideoTitle title={original_title} overview={overview}/>
-      <VideoBackground movieId={id}/>
+      <VideoTitle title={original_title} overview={overview} />
+      <VideoBackground movieId={id} />
     </div>
   );
 };
