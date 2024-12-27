@@ -7,6 +7,11 @@ const MainContainer = () => {
   const movies = useSelector((store) => store.movies?.nowPlayingMovies);
 
   if (movies === null) return; //it call early return, means nowPlayingMovies contain null or empty then return and don't go forward.
+  if (!movies || movies.length < 3) {
+    // Either movies is null/undefined, or there are not enough movies
+    return <div>No movies available</div>;
+  }
+
   console.log("maincontainer", movies);
 
   const mainMovie = movies[2];
