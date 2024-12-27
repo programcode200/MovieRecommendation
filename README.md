@@ -39,7 +39,8 @@ for Browse page design
             - movies list n*
 
 Gpt search feature
-    
+    - gpt search bar
+    - gpt movie suggestion
 
 
        
@@ -93,3 +94,13 @@ check header for navigate, when user is signin so he can't go back to signin pag
     - Register or login for tmdb api 
     - create an app and then you will get the access token
     - get data from TMDB now playing movies list API
+
+# Memoization
+
+Memoization is a programming technique used to optimize code by storing the results of expensive function calls and reusing them when the same inputs occur again. It essentially trades space for time by caching the results of function calls to avoid redundant computations.
+
+How Memoization Works
+Function Call: When a function is called with a specific input, the result is computed and stored in a cache (often a dictionary or object).
+Cache Check: Before computing the result for a new input, the function checks if the result is already in the cache.
+Reuse: If the result is in the cache, it is returned immediately, saving computational effort.
+Compute if Missing: If the result is not in the cache, the function computes it, stores it in the cache, and then returns it.

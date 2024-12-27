@@ -6,20 +6,28 @@ import useUpcomingMovies from "../hooks/useUpcomingMovies";
 import useTopRatedSeries from "../hooks/useTopRatedSeries";
 import useTrending from "../hooks/useTrending";
 import GptSearch from "./GptSearch";
+import { useSelector } from "react-redux";
 
 const Browse = () => {
+  const showGptSearch = useSelector((store) => store.gpt.showGptSearch);
+
   //call custom hook from useuseNowPlayingMovies
   useNowPlayingMovies();
   useUpcomingMovies();
   useTopRatedSeries();
-  useTrending()
+  useTrending();
 
   return (
     <div>
       <Header />
-      <GptSearch/>
-      <MainContainer/>
-      <SecondaryContainer/>
+      {showGptSearch ? (
+        <GptSearch />
+      ) : (
+        <>
+          <MainContainer />
+          <SecondaryContainer />
+        </>
+      )}
     </div>
   );
 };
