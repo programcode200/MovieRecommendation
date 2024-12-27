@@ -32,10 +32,11 @@ const GptSearchBar = () => {
       " only give me names of 5 movies, comma seperated. example result is: hera pheri, coolie, don, hungama, golmaal";
 
     const gptResults = await openai.chat.completions.create({
-      messages: [{ role: "user", gptQuery }],
-      model: "gpt-3.5-turbo",
+      model: "gpt-4o-mini",
+      store: true,
+      messages: [{ role: "user", content: gptQuery }],
     });
-    // console.log(gptResult?.choices[0]?.message?.content);
+    console.log(gptResults?.choices[0]?.message?.content);
 
     if (!gptResults.choices) {
       alert("Movies not found");
@@ -48,7 +49,9 @@ const GptSearchBar = () => {
     const resultTMDB = await Promise.all(arrayOfPromise);
     console.log(resultTMDB);
 
-    dispatch(addGptMovieResult({moviename: gptMovies, movieResult: resultTMDB }));
+    dispatch(
+      addGptMovieResult({ moviename: gptMovies, movieResult: resultTMDB })
+    );
   };
 
   return (
