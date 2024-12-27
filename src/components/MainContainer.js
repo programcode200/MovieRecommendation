@@ -9,7 +9,7 @@ const MainContainer = () => {
   if (movies === null) return; //it call early return, means nowPlayingMovies contain null or empty then return and don't go forward.
   console.log("maincontainer", movies);
 
-  const mainMovie = movies[1];
+  const mainMovie = movies[2];
   console.log("movie",mainMovie);
 
   const { id, overview, original_title , name} = mainMovie;
