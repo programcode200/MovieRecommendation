@@ -51,14 +51,16 @@ Gpt search feature
     - create proj in fire base
     - authenticate 
     - install firebase CLI => npm i -g firebase-tools 
-    - for deploy run firebase login
+# for deploy 
+    -run firebase login
     - firebase init
-        -y, for Firebase Hosting and (optionally) set up GitHub Action deploys, Use an existing project, select you project, build, no, no
+    - y, Configure files for Firebase Hosting and (optionally) set up GitHub Action deploys, Use an existing project, select you project, build, no, no
     - npm build
     - firebase deploy
 
 
 # -D
+
 -D or --save-dev: This flag tells npm to add the installed package to the devDependencies section of your package.json file. These dependencies are typically used during development (e.g., build tools, testing libraries) but are not needed in the production environment.
 
 devDependencies vs dependencies:
