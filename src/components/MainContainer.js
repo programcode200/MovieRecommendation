@@ -9,12 +9,12 @@ const MainContainer = () => {
   if (movies === null) return; //it call early return, means nowPlayingMovies contain null or empty then return and don't go forward.
   if (!movies || movies.length < 3) {
     // Either movies is null/undefined, or there are not enough movies
-    return <div>No movies available</div>;
+    return <div className="p-t">No movies available</div>;
   }
 
   console.log("maincontainer", movies);
 
-  const mainMovie = movies[2];
+  const mainMovie = movies[3];
   console.log("movie",mainMovie);
 
   const { id, overview, original_title , name} = mainMovie;
